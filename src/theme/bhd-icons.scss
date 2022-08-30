@@ -1,0 +1,17 @@
+@font-face {
+  font-family: 'icosBhd';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../assets/fonts/icomoon.ttf');
+}
+
+.bhd-icon {
+  font-family: var(--BHDIcons);
+  font-style: normal;
+}
+
+.icon-user {
+  &:before {
+    content: var(--icon-user);
+  }
+}
