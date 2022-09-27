@@ -1,0 +1,33 @@
+
+  <div class="ion-page">
+    <ion-header>
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-menu-button color="primary"></ion-menu-button>
+        </ion-buttons>
+        <ion-title mode='ios'>{{title}}</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content *ngIf="dataLoaded | async">
+      <div class="title">
+        CUENTAS ({{products.length}})
+      </div>
+
+      <ion-card *ngFor="let item of products">
+        <ion-card-content>
+          <div class="productInfo">
+            <ion-icon size='large' name="wallet-outline"></ion-icon>
+            {{item.productName}} - {{item.productNumber}}
+          </div>
+          <div class="productAmount">
+            <label for="">{{item.currency}}$ {{item.availableBalance | currency}}</label>
+            <span>Balance disponible</span>
+          </div>
+        </ion-card-content>
+      </ion-card>
+
+
+    </ion-content>
+  </div>
+
+

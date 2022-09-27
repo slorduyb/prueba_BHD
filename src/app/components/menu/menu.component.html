@@ -1,0 +1,43 @@
+<ion-menu contentId="{{mainContent}}">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>{{userName}}</ion-title>
+      <ion-label>EDITAR PERFIL <ion-icon name="pencil-outline"></ion-icon>
+      </ion-label>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+
+
+    <div class="main-item" *ngFor="let item of menus.mainItems">
+      <ion-icon *ngIf="item.name !== true" size="medium" src="{{item.icon}}"></ion-icon>
+      <ion-icon *ngIf="item.name === true" size="medium" name="{{item.icon}}"></ion-icon>
+      <div class="menu-item">
+        <ion-label class="title">{{item.title}}</ion-label>
+        <ion-label class="subtitle">{{item.subtitle}}</ion-label>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="main-item" *ngFor="let item of menus.otherItems">
+      <ion-icon *ngIf="item.name !== true" size="medium" src="{{item.icon}}"></ion-icon>
+      <ion-icon *ngIf="item.name === true" size="medium" name="{{item.icon}}"></ion-icon>
+      <div class="menu-item">
+        <ion-label class="title">{{item.title}}</ion-label>
+        <ion-label class="subtitle">{{item.subtitle}}</ion-label>
+      </div>
+    </div>
+
+
+    
+  </ion-content>
+  <label>Version: 1.0.0</label>
+  <ion-footer collapse="fade">
+    <ion-toolbar>
+      <ion-menu-toggle>
+        <ion-button (click)="logout()" fill="clear">CERRAR SESION</ion-button>
+      </ion-menu-toggle>
+    </ion-toolbar>
+  </ion-footer>
+</ion-menu>

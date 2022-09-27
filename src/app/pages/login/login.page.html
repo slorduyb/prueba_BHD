@@ -1,0 +1,62 @@
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col class="logo-container">
+        <ion-img class="logo-login" src="/assets/icon/logo_login.svg" size="large"></ion-img>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>'
+        <ion-item [ngClass]="errors.documentNumber  ? 'input-form-error' : 'input-form'">
+          <ion-icon size="large" name="person-outline"></ion-icon>
+          <ion-input type="number" [(ngModel)]="formData.documentNumber" placeholder="Documento de identidad"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item [ngClass]="{'input-form': !errors.password, 'input-form-error': errors.password}">
+          <ion-icon size="large" name="key-outline"></ion-icon>
+          <ion-input type="password" [(ngModel)]="formData.password" placeholder="Contraseña"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label class="recover-label">RECUERDA MI USUARIO</ion-label>
+          <ion-toggle slot="start"></ion-toggle>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-button (click)="makeLogin()" expand="block">INICIAR SESION</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="help-session">
+        <ion-label>
+          AYUDA PARA INICIAR SESION
+        </ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="date">
+        <ion-label>
+          {{currentDate}}
+        </ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-card *ngIf="loginError">
+          <ion-card-content>
+            Documento de identidad y/o contraseña incorrectos
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+</ion-content>
